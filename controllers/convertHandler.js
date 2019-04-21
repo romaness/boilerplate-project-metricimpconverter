@@ -83,7 +83,7 @@ function ConvertHandler() {
   };
 
   this.convert = function(initNum, initUnit) {
-    var input = [5, "gal"];
+    var result;
     var returnUnit = this.getReturnUnit(initUnit);
     var convertValues = this.convertValues
     //what is the first val and then I get the returnunit as the second val
