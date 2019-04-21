@@ -62,10 +62,11 @@
           event.preventDefault();
           $.ajax({
             url: '/api/convert',
+            contentType: "application/json",
             type: 'get',
             data: $('#convertForm').serialize(),
             success: function(data) {
-              $('#result').text(data.string || data);
+              $('#result').text(data.toString);
               $('#jsonResult').text(JSON.stringify(data));
             }
           });

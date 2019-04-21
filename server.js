@@ -4,6 +4,7 @@ var express     = require('express');
 var bodyParser  = require('body-parser');
 var expect      = require('chai').expect;
 var cors        = require('cors');
+var helmet      = require('helmet')
 
 var apiRoutes         = require('./routes/api.js');
 var fccTestingRoutes  = require('./routes/fcctesting.js');
@@ -36,6 +37,9 @@ app.use(function(req, res, next) {
     .type('text')
     .send('Not Found');
 });
+
+
+app.use(helmet())
 
 //Start our server and tests!
 app.listen(process.env.PORT || 3000, function () {
